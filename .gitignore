@@ -1,8 +1,0 @@
-node_modules
-.vscode
-*.swp
-*.swo
-.module-cache
-.DS_STORE
-*.log*
-chrome-user-data
