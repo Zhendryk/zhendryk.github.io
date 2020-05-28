@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "target": "es2015",
+        "allowSyntheticDefaultImports": false,
+        "baseUrl": "./",
+        "paths": {
+            "Assets/*": ["src/assets/*"],
+            "Components/*": ["src/components/*"],
+            "Themes/*": ["src/themes/*"]
+        }
+    },
+    "exclude": ["node_modules"]
+}
