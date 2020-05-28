@@ -1,9 +1,14 @@
-node_modules
-dist
+# MISC FILES
 .vscode
 *.swp
 *.swo
-.module-cache
-.DS_STORE
 *.log*
+.DS_STORE
+.module-cache
+
+# DEBUGGING
 chrome-user-data
+
+# DEPENDENCIES / BUILD OUTPUT
+dist
+node_modules

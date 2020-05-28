@@ -20,6 +20,9 @@ import CategoryIcon from '@material-ui/icons/Category' // Skills
 import EmojiEventsIcon from '@material-ui/icons/EmojiEvents' // Awards
 import FingerprintIcon from '@material-ui/icons/FingerPrint' // Interests
 
+// Assets
+import AvatarImg from 'Assets/images/AvatarImg.png'
+
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
@@ -52,7 +55,7 @@ export default function Sidebar(props: any) {
 
     return (
         <Container className={classes.root}>
-            <Avatar className={classes.avatar} alt="Jonathan Bailey" src="/static/images/avatar.png" />
+            <Avatar className={classes.avatar} alt="Jonathan Bailey" src={AvatarImg} />
             <Divider />
             <List className={classes.list} component="nav" aria-label="Resume Anchors">
                 <ListItem button className={classes.listItem}>
