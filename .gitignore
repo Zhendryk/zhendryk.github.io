@@ -1,0 +1,9 @@
+node_modules
+dist
+.vscode
+*.swp
+*.swo
+.module-cache
+.DS_STORE
+*.log*
+chrome-user-data
