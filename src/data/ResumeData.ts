@@ -1,5 +1,18 @@
 import ResumeContentCardData from "Components/Layout/ResumeContentCardData";
 
+/*
+    ABOUT
+*/
+export const aboutBlurb = new ResumeContentCardData(
+    undefined,
+    "Exploring the universe, one commit at a time...",
+    undefined,
+    "Versatile, efficient and reliable software engineer with a passion for design and innovative solutions. High level of achievement throughout scholastic career while balancing heavy workloads. A demonstrated leader and team-player to peers. Proficient in many development languages and paradigms, with a passion to always keep learning."
+);
+
+/*
+    WORK EXPERIENCE
+*/
 const boseData = new ResumeContentCardData(
     "Software Engineer",
     "Bose Corporation",
@@ -38,3 +51,37 @@ const iosData = new ResumeContentCardData(
 );
 
 export const resumeWorkExperienceData: ResumeContentCardData[] = [boseData, umassWebData, umassDiningData, csTutorData, tesData, iosData];
+
+/*
+    EDUCATION
+*/
+const gradData = new ResumeContentCardData(
+    "Masters of Science - Computer Science",
+    "Georgia Institute of Technology",
+    "Spring 2020 - Present",
+    "Studying for a Master’s of Science in Computer Science, concentrating in Machine Learning online while working full-time. GPA: 4.0"
+);
+const undergradData = new ResumeContentCardData(
+    "Bachelors of Science - Computer Science",
+    "University of Massachusetts Amherst",
+    "2014 - 2018",
+    "Concentration in Artificial Intelligence. Minor in Mathematics. Commonwealth Honors College Student. GPA: 3.46"
+);
+
+export const resumeEducationData: ResumeContentCardData[] = [gradData, undergradData];
+
+/*
+    VOLUNTEER EXPERIENCE
+*/
+
+/*
+    SKILLS
+*/
+
+/*
+    AWARDS
+*/
+
+/*
+    INTERESTS
+*/

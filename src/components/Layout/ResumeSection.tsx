@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import ResumeContentCard from "Components/Layout/ResumeContentCard";
 import ResumeContentCardData from "Components/Layout/ResumeContentCardData";
 import { Paper, Typography, Divider } from "@material-ui/core";
@@ -8,28 +7,34 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles({
     root: {
         backgroundColor: "#c0c0c0",
+        marginTop: "1rem",
+        marginBottom: "1rem",
     },
     title: {
-        padding: "0.25em",
+        padding: "0.2em",
     },
 });
 
-export default function ResumeSection(props: { title: string; cards: ResumeContentCardData[] }) {
+interface Props {
+    title: string;
+    cards: Array<ResumeContentCardData>;
+}
+
+export default function ResumeSection(props: Props) {
     const classes = useStyles();
     return (
-        <Paper className={classes.root}>
-            <Typography className={classes.title} variant="h2">
+        <Paper className={classes.root} elevation={3}>
+            <Typography className={classes.title} variant="h3" color="textPrimary">
                 {props.title}
             </Typography>
-            {/* <Divider /> */}
-            {props.cards.map((data) => {
-                return <ResumeContentCard data={data} />;
+            <Divider />
+            {props.cards.map((data, index) => {
+                return <ResumeContentCard data={data} key={index} />;
             })}
         </Paper>
     );
 }
 
-ResumeSection.propTypes = {
-    title: PropTypes.string.isRequired,
-    cards: PropTypes.arrayOf(PropTypes.instanceOf(ResumeContentCardData)).isRequired,
+ResumeSection.defaultProps = {
+    cards: [],
 };

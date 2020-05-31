@@ -1,3 +1,5 @@
+// TODO: Add actual date ranges as an option in addition to raw strings for detail text, make them comparable as well for sorting
+
 export default class ResumeContentCardData {
     title: string;
     subtitle: string;
