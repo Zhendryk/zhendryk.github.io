@@ -4,7 +4,6 @@ import { createStyles, makeStyles, useTheme, Theme } from "@material-ui/core/sty
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
@@ -26,12 +25,12 @@ import CategoryIcon from "@material-ui/icons/Category";
 import EmojiEventsIcon from "@material-ui/icons/EmojiEvents";
 import FingerprintIcon from "@material-ui/icons/Fingerprint";
 
+import ResumeSection from "./ResumeSection";
+
 const listItems = ["About", "Experience", "Education", "Projects", "Skills", "Awards", "Interests"];
 const listItemIcons = [<AccountCircleIcon />, <WorkIcon />, <SchoolIcon />, <BuildIcon />, <CategoryIcon />, <EmojiEventsIcon />, <FingerprintIcon />];
 
 const drawerWidth = 300;
-const avatarContainerHeight = 50;
-const avatarExpandedContainerHeight = 250;
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -42,22 +41,29 @@ const useStyles = makeStyles((theme: Theme) =>
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            minHeight: theme.spacing(7) + 1,
         },
         avatarContainerClosed: {
-            height: avatarContainerHeight,
+            height: theme.spacing(7) + 1,
+            [theme.breakpoints.up("sm")]: {
+                height: theme.spacing(9) + 1,
+            },
             transition: theme.transitions.create(["width", "height"], {
                 easing: theme.transitions.easing.sharp,
                 duration: theme.transitions.duration.enteringScreen,
             }),
         },
         avatarContainerOpen: {
-            height: avatarExpandedContainerHeight,
+            height: drawerWidth,
             transition: theme.transitions.create(["width", "height"], {
                 easing: theme.transitions.easing.sharp,
                 duration: theme.transitions.duration.leavingScreen,
             }),
         },
-        avatar: {},
+        avatar: {
+            width: "75%",
+            height: "75%",
+        },
         drawer: {
             width: drawerWidth,
             flexShrink: 0,
@@ -98,7 +104,6 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export default function MiniDrawer() {
     const classes = useStyles();
-    const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
     const handleDrawerOpen = () => {
@@ -148,9 +153,7 @@ export default function MiniDrawer() {
                 </List>
             </Drawer>
             <main className={classes.content}>
-                {resumeWorkExperienceData.map((data) => {
-                    return <ResumeContentCard data={data} />;
-                })}
+                <ResumeSection title="Experience" cards={resumeWorkExperienceData} />
             </main>
         </div>
     );
